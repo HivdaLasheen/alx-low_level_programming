@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
-*main ~ entry point
-*return : always 0 (success)
+  *main - file name 4-puts.c
+  *Return: Always 0.
   */
 int main(void)
 {
