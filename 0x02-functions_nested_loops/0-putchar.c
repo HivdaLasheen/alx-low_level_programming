@@ -1,11 +1,22 @@
-#include "main.h"
+#include"main.h"
 /**
   *main - file name 0-putchar.c
   *Return: Always 0.
   */
 int main(void)
 {
-	char *sh = "0. _putchar";
+        _putchar('_')
+        _putchar('p')
+        _putchar('u')
+        _putchar('t')
+        _putchar('c')
+        _putchar('h')
+        _putchar('a')
+        _putchar('r')
+        _putchar('\n');
+        
+{
+	char * = "Holberton";
 
 	while (*sh)
 	{
@@ -14,5 +25,5 @@ int main(void)
 	}
 	_putchar('\n');
 
-	return (0);
+return (0);
 }
