@@ -1,10 +1,12 @@
+#include <stdio.h>
 #include "main.h"
-
 /**
- * print_alphabet -
- *
- */
-void print_alphabet(void)
+  *main - Entry point
+  *Description: print the alphabet
+  *Return: Always 0
+  */
+int main(void)
+	void print_alphabet(void)
 {
 	char ch;
 
@@ -15,4 +17,5 @@ void print_alphabet(void)
 		ch++;
 	}
 	_putchar('\n');
-}
+{
+
