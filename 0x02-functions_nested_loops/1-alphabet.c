@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 /**
   *main - Entry point
@@ -7,14 +6,10 @@
   */
 void print_alphabet(void)
 {
-	char ch;
-
-	ch = 'a';
-	while (ch <= 'z')
+	int i;
+	for (i =97; i<= 122; i++)
 	{
-		_putchar(ch);
-		ch++;
+		_putchar(i);
 	}
 	_putchar('\n');
-{
-
+}
