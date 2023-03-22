@@ -3,7 +3,7 @@
   * print_alphabet - Prints alphabet x10
   * Return : Always 0
   */
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	int i;
 	int j;
