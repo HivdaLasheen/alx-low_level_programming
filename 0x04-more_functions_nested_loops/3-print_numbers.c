@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *print_numbers - print 0123456789
+ * print_numbers - prints from 0 to 9 characters
  *
  * Return: void
  */
