@@ -1,19 +1,19 @@
 #include "main.h"
 /**
  * string_topper - change all lowercase to uppercase.
- * @k : pointer.
- * Return : k
+ * @k: str to make upper.
+ * Return : k to return value of upper
  */
 char *string_toupper(char *)
 {
 	int c;
 
-	c = 0;
-	while (k[c])
+	for  (c = 0; k[c] != '\0'; c++)
 	{
 		if (k[c] >= 'a' && k[c] <= 'x')
+		{
 			k[c] -= 32;
-		c++;
+		}
 	}
 	return (k);
 }
