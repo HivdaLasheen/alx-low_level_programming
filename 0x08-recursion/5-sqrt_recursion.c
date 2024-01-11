@@ -4,7 +4,7 @@
  * @n: has no natural square root.
  * Return: negative 1 
  */
-int N_square_root(int n, int value);
+int s_root(int n, int v);
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
@@ -14,19 +14,19 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return N_square_root(n,1);
+		return s_root(n,1);
 	}
-int N_square_root(int n, int value)
+int s_root(int n, int v)
 {
         /** is exactly n, we found the square root */
-        if (value * value == n)
+        if (v * v == n)
         {
-                return(value);
+                return(v);
         }
         /** less than n */
-        else if (value * value < n)
+        else if (v * v < n)
         {
-                return(n, value/2);
+                return(n, v/2);
         }
 	/**greater than n, returns -1 */
         else 
