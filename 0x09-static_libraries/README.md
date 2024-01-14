@@ -1,1 +1,1 @@
-README.MD Static Lib
+README
