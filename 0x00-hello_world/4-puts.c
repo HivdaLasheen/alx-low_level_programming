@@ -1,11 +1,11 @@
-#!/bin/bash
 #include <stdio.h>
-//Return : 0
-//main: 4-puts function
-int main(){
-    // Using puts to print the required string
-    puts("Programming is like building a multilingual puzzle");
-
-    // Return 0 to end the program
-    return 0;
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }
