@@ -9,13 +9,15 @@
 */
 int main(int argc, char *argv[])
 {
-	int i = 0;
-
 	while (argc--)
 	{
-		putchar(argv[0][i]);
-		i++;
+		char *currentArg = *argv++;
+
+		while (*currentArg)
+		{
+			putchar(*currentArg++);
+		}
+		putchar('\n');
 	}
-	putchar('\n');
 	return (0);
 }
