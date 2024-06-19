@@ -1,39 +1,45 @@
 #include "main.h"
+#define NULL 0
 
 /**
- * custom_strstr - locate and return pointer to first occurrence of substring
- * @haystack: string to search
- * @needle: target substring to search for
- * Return: pointer to beginning of located substring, or NULL if not found
- */
-char *custom_strstr(char *haystack, char *needle)
+* _strstr - locate and return pointer to first occurence of substring
+* @haystack: string to search
+* @needle: target substring to search for
+* Return: pointer to index of string at first occurence of whole substring
+*/
+char *_strstr(char *haystack, char *needle)
 {
-	int haystack_index = 0, needle_index, match_index;
+	int i = 0, j, x;
 
 	if (needle[0] == '\0')
-		return haystack;
+		return (haystack);
 
-	while (haystack[haystack_index] != '\0')
+	while (haystack[i] != '\0') /* iterate through haystack */
 	{
-		if (haystack[haystack_index] == needle[0])
+		/* if a byte matches first char of needle */
+		/* interate through needle until match ends */
+
+		if (haystack[i] == needle[0])
 		{
-			match_index = haystack_index;
-			needle_index = 0;
+			x = i, j = 0;
 
-			while (needle[needle_index] != '\0' &&
-			       haystack[match_index] == needle[needle_index])
+			while (needle[j] != '\0')
 			{
-				match_index++;
-				needle_index++;
-			}
+				if (haystack[x] == needle[j])
+				x++, j++;
 
-			if (needle[needle_index] == '\0')
-				return haystack + haystack_index;
+				else
+				break;
+			} /* if matched throughout, return haystack */
+
+			if (needle[j] == '\0')
+			{
+				return (haystack + i);
+			}
 		}
 
-		haystack_index++;
+		i++;
 	}
 
-	return NULL; /* No match */
+	return (NULL); /* No match */
 }
-
