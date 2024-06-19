@@ -4,34 +4,36 @@
  * custom_strstr - locate and return pointer to first occurrence of substring
  * @haystack: string to search
  * @needle: target substring to search for
- * Return: pointer to index of string at first occurrence of whole substring
+ * Return: pointer to beginning of located substring, or NULL if not found
  */
 char *custom_strstr(char *haystack, char *needle)
 {
-	int index = 0, inner_index, start_index;
+	int haystack_index = 0, needle_index, match_index;
 
 	if (needle[0] == '\0')
 		return haystack;
 
-	while (haystack[index] != '\0')
+	while (haystack[haystack_index] != '\0')
 	{
-		if (haystack[index] == needle[0])
+		if (haystack[haystack_index] == needle[0])
 		{
-			start_index = index;
-			inner_index = 0;
+			match_index = haystack_index;
+			needle_index = 0;
 
-			while (needle[inner_index] != '\0' && haystack[start_index] == needle[inner_index])
+			while (needle[needle_index] != '\0' &&
+			       haystack[match_index] == needle[needle_index])
 			{
-				start_index++;
-				inner_index++;
+				match_index++;
+				needle_index++;
 			}
 
-			if (needle[inner_index] == '\0')
-				return haystack + index;
+			if (needle[needle_index] == '\0')
+				return haystack + haystack_index;
 		}
 
-		index++;
+		haystack_index++;
 	}
 
 	return NULL; /* No match */
 }
+
