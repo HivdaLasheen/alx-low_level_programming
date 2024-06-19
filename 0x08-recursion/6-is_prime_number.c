@@ -9,12 +9,10 @@
 int check_divisibility(int num, int divisor)
 {
 	if (divisor == num - 1)
-		return 1;
-
+		return (1);
 	else if (num % divisor == 0)
-		return 0;
-
-	return check_divisibility(num, divisor + 1);
+		return (0);
+	return (check_divisibility(num, divisor + 1));
 }
 
 /**
@@ -27,10 +25,8 @@ int is_prime_number(int num)
 	int start_divisor = 2;
 
 	if (num < 2)
-		return 0;
-
+		return (0);
 	if (num == 2)
-		return 1;
-
-	return check_divisibility(num, start_divisor);
+		return (1);
+	return (check_divisibility(num, start_divisor));
 }
