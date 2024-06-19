@@ -1,5 +1,4 @@
 #include "main.h"
-#define END_OF_STRING '\0'
 
 /**
  * _strpbrk - searches a string for any of a set of bytes.
@@ -11,15 +10,16 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
-
-	for (i = 0; s[i] != END_OF_STRING; i++)
+	while (*s != '\0')
 	{
-		for (j = 0; accept[j] != END_OF_STRING; j++)
+		char *a = accept;
+		while (*a != '\0')
 		{
-			if (s[i] == accept[j])
-				return &s[i];
+			if (*s == *a)
+				return s;
+			a++;
 		}
+		s++;
 	}
 
 	return NULL;
