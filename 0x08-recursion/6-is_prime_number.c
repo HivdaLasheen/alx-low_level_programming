@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * check_divisibility - Checks divisibility recursively
+ * check_divisibility - Recursively checks divisibility
  * @num: The number to evaluate for primality
  * @divisor: The current divisor to test
  * Return: 1 if prime, 0 otherwise
@@ -24,7 +24,7 @@ int check_divisibility(int num, int divisor)
  */
 int is_prime_number(int num)
 {
-	int divisor = 2;
+	int start_divisor = 2;
 
 	if (num < 2)
 		return 0;
@@ -32,5 +32,5 @@ int is_prime_number(int num)
 	if (num == 2)
 		return 1;
 
-	return check_divisibility(num, divisor);
+	return check_divisibility(num, start_divisor);
 }
