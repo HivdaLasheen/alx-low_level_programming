@@ -8,38 +8,46 @@
  * @age: The dog's age.
  * @owner: The owner's name.
  *
- * Return: Pointer to the newly created dog structure, or NULL if memory allocation fails.
+ * Return: Pointer to the newly created dog structure, or NULL if memory 
+ *         allocation fails or if name or owner is NULL.
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    dog_t *new_dog;
-    
-    // Allocate memory for the new dog structure
-    new_dog = malloc(sizeof(dog_t));
-    if (new_dog == NULL)
-        return NULL;
+    dog_t *p;
 
-    // Allocate memory for name and copy it
-    new_dog->name = malloc(strlen(name) + 1); // +1 for null terminator
-    if (new_dog->name == NULL)
+    /* Allocate memory for the dog structure */ 
+    p = malloc(sizeof(dog_t));
+    if (p == NULL)
+        return (NULL);
+
+    /* Handle NULL name and owner cases */
+    if (name == NULL || owner == NULL)
     {
-        free(new_dog); // Free the dog structure if name allocation fails
-        return NULL;
+        free(p); 
+        return (NULL);
     }
-    strcpy(new_dog->name, name);
 
-    // Allocate memory for owner and copy it
-    new_dog->owner = malloc(strlen(owner) + 1);
-    if (new_dog->owner == NULL)
+    /* Allocate memory for name and copy it */
+    p->name = malloc(strlen(name) + 1);
+    if (p->name == NULL)
     {
-        free(new_dog->name); // Free the name if owner allocation fails
-        free(new_dog);       // Free the dog structure
-        return NULL;
+        free(p);
+        return (NULL);
     }
-    strcpy(new_dog->owner, owner);
+    strcpy(p->name, name);
 
-    // Set the age
-    new_dog->age = age;
+    /* Allocate memory for owner and copy it */
+    p->owner = malloc(strlen(owner) + 1);
+    if (p->owner == NULL)
+    {
+        free(p->name);
+        free(p);
+        return (NULL);
+    }
+    strcpy(p->owner, owner);
 
-    return new_dog;
+    /* Set the age */
+    p->age = age;
+
+    return (p);
 }
