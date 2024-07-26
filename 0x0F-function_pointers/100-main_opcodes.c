@@ -9,34 +9,33 @@
  */
 int main(int argc, char *argv[])
 {
-    int bytes, i;
-    unsigned char *opcodes;
+	int bytes, i;
+	unsigned char *opcodes;
 
-    if (argc != 2)
-    {
-        printf("Error\n");
-        exit(1);
-    }
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-    bytes = atoi(argv[1]);
+	bytes = atoi(argv[1]);
 
-    if (bytes < 0)
-    {
-        printf("Error\n");
-        exit(2);
-    }
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-    opcodes = (unsigned char *)&main; 
+	opcodes = (unsigned char *)&main; 
 
-    for (i = 0; i < bytes; i++)
-    {
-        printf("%.2x", opcodes[i]);
-        if (i < bytes - 1)
-        {
-            printf(" ");
-        }
-    }
+	for (i = 0; i < bytes; i++)
+	{
+		if (i != 0)
+			putchar(' ');
+		putchar('0' + (opcodes[i] / 16));
+		putchar('0' + (opcodes[i] % 16));
+	}
 
-    printf("\n");
-    return 0;
+	putchar('\n');
+	return (0);
 }
