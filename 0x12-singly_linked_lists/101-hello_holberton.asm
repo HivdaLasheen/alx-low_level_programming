@@ -1,21 +1,19 @@
 section .data
-    hello_msg db 'Hello, Holberton', 0    ; The message to print
-    fmt db '%s', 10, 0                    ; The format string for printf ("%s\n")
+hello:	db "Hello, Holberton",10,0
+format:	db "%s",0
 
-section .text
-    global _start
+    section .text
+    global main
+    extern printf
 
-_start:
-    ; Call printf
-    ; Prepare the arguments for printf
-    mov rdi, fmt                          ; First argument: format string
-    mov rsi, hello_msg                    ; Second argument: message string
-    xor eax, eax                          ; Clear the eax register (number of SSE registers used, 0 for printf)
+main:
+    push rbp
+    mov rbp, rsp
 
-    ; Call printf (printf is located via the PLT)
+    mov rsi, hello
+    mov rdi, format
     call printf
 
-    ; Exit the program
-    ; Prepare the arguments for exit
-    mov rdi, 0                            ; Exit code 0
-    call exit                             ; Call exit
+    pop rbp
+    mov rax, 0
+    ret
